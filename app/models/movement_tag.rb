@@ -1,0 +1,2 @@
+class MovementTag < ApplicationRecord
+end
