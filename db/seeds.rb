@@ -11,3 +11,16 @@ campus_locations = CampusLocation.create(
 		{name: "Manzanillo"}
 	]
 )
+
+dependences = Dependence.create(
+	[
+		{
+			name: "Facultad de Telemática",
+			campus_location_id: 1
+		},
+		{
+			name: "Facultad de gastronomía",
+			campus_location_id: 2
+		}
+	]
+)
