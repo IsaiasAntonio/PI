@@ -1,6 +1,6 @@
 class CampusLocationsController < ApplicationController
 	def index
 		@campus = CampusLocation.all
-		render json: @campus
+		render json: {campus_locations: @campus}
 	end
 end
