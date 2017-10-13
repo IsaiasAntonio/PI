@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :campus_locations
-  resources :dependences
+  namespace :api do
+  	namespace :v1 do
+			resources :campus_locations
+			resources :dependences
+  	end
+  end
 end
