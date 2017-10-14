@@ -26,6 +26,9 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.action_mailer.default_url_options = { :host => "pacochacon94@gmail.com"}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => 'smtp.gmail.com', :port => 587 }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
