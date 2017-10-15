@@ -1,5 +1,3 @@
-# README
-
 # Project details
 
 ## API application using:
