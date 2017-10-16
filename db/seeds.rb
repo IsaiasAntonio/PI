@@ -24,3 +24,14 @@ dependences = Dependence.create(
 		}
 	]
 )
+
+user_roles = UserRole.create(
+	[
+		{
+			name: "Admin"
+		},
+		{
+			name: "Student"
+		}
+	]
+)
