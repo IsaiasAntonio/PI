@@ -14,4 +14,12 @@ class Devise::RegistrationCustomController < DeviseTokenAuth::RegistrationsContr
 	def sign_up_params
 		params.permit(:email, :password, :password_validation, :name, :father_last_name, :mother_last_name, :dependence_id, :user_role_id)
 	end
+
+	private
+	def render_create_success
+		render json: {
+			status: 'success',
+			user:   resource_data
+		}
+	end
 end
