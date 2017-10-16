@@ -35,3 +35,14 @@ user_roles = UserRole.create(
 		}
 	]
 )
+
+ticket_states = TicketStates.create(
+	[
+		{
+			name: "Active"
+		},
+		{
+			name: "Cancelled"
+		}
+	]
+)
