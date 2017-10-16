@@ -4497,3 +4497,2399 @@ Unpermitted parameter: :session
 Completed 200 OK in 208ms (Views: 0.2ms | ActiveRecord: 6.7ms)
 
 
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:32:05 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco1234567@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco1234567@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco1234567@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"s4bZJl9tOdgZ_xATsgGRmQ\":{\"token\":\"$2a$10$5GClXSox/55gen29nMs3TOj/WwKGlIUtNqtPaEdHPKTdqegIOIP7i\",\"expiry\":1509348542,\"last_token\":\"$2a$10$qkmacWoSIUe.mI3qxU//.eeSyq/Md5SlB4B6PcEm89NP9F5YHbhum\",\"updated_at\":\"2017-10-16T01:29:02.554-05:00\"},\"0ixbYHuoMpNqB-XbhUCKgQ\":{\"token\":\"$2a$10$yg.jn93dVYULCFlZJ1T8Z.2toaCz/b.hrIRl4muMoySwRU510COna\",\"expiry\":1509348569,\"last_token\":\"$2a$10$wNjM16HSlDscfinZI/pUwOJp9bSi7yM/pdBPhJwD7m5xui6bMJFxy\",\"updated_at\":\"2017-10-16T01:29:29.470-05:00\"},\"wTPUXU3eQ8gMJvHbYVIO2w\":{\"token\":\"$2a$10$47fivZePiF5bTr4BrpS30OwYB0dlNdKS9VwKvYqKUClRGKL3SqNPa\",\"expiry\":1509348596,\"last_token\":\"$2a$10$XIe.yX5.sPxJc8MbLLXwHONqpz.d02Sj2HeslHh15BEL49EbMidni\",\"updated_at\":\"2017-10-16T01:29:56.632-05:00\"},\"wdhtBStZ6Ca7Wv-NCGjp9A\":{\"token\":\"$2a$10$3dF.a.Fhce8Grh5yX1SxcevYMmu6bPwaIsEpdL/poIjq2wEuPAvPi\",\"expiry\":1509348725}}"], ["updated_at", "2017-10-16 06:32:05.680729"], ["id", 6]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 3], ["current_sign_in_at", "2017-10-16 06:32:05.685439"], ["last_sign_in_at", "2017-10-16 06:29:56.566457"], ["updated_at", "2017-10-16 06:32:05.686240"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"s4bZJl9tOdgZ_xATsgGRmQ\":{\"token\":\"$2a$10$5GClXSox/55gen29nMs3TOj/WwKGlIUtNqtPaEdHPKTdqegIOIP7i\",\"expiry\":1509348542,\"last_token\":\"$2a$10$qkmacWoSIUe.mI3qxU//.eeSyq/Md5SlB4B6PcEm89NP9F5YHbhum\",\"updated_at\":\"2017-10-16T01:29:02.554-05:00\"},\"0ixbYHuoMpNqB-XbhUCKgQ\":{\"token\":\"$2a$10$yg.jn93dVYULCFlZJ1T8Z.2toaCz/b.hrIRl4muMoySwRU510COna\",\"expiry\":1509348569,\"last_token\":\"$2a$10$wNjM16HSlDscfinZI/pUwOJp9bSi7yM/pdBPhJwD7m5xui6bMJFxy\",\"updated_at\":\"2017-10-16T01:29:29.470-05:00\"},\"wTPUXU3eQ8gMJvHbYVIO2w\":{\"token\":\"$2a$10$47fivZePiF5bTr4BrpS30OwYB0dlNdKS9VwKvYqKUClRGKL3SqNPa\",\"expiry\":1509348596,\"last_token\":\"$2a$10$XIe.yX5.sPxJc8MbLLXwHONqpz.d02Sj2HeslHh15BEL49EbMidni\",\"updated_at\":\"2017-10-16T01:29:56.632-05:00\"},\"wdhtBStZ6Ca7Wv-NCGjp9A\":{\"token\":\"$2a$10$pFwViZ7k3X4HlE1Y4Op1wOXYjAIqDLrEQ64uUerHkraNsZo.mGmka\",\"expiry\":1509348725,\"last_token\":\"$2a$10$3dF.a.Fhce8Grh5yX1SxcevYMmu6bPwaIsEpdL/poIjq2wEuPAvPi\",\"updated_at\":\"2017-10-16T01:32:05.751-05:00\"}}"], ["updated_at", "2017-10-16 06:32:05.752524"], ["id", 6]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 201ms (Views: 0.2ms | ActiveRecord: 6.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCampusLocations (20171013164609)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "campus_locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013164609"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDependences (20171013175444)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "dependences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "campus_location_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_63c5f217ca"
+FOREIGN KEY ("campus_location_id")
+  REFERENCES "campus_locations" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_dependences_on_campus_location_id" ON "dependences" ("campus_location_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013175444"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMovementTags (20171013211835)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "movement_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013211835"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserRoles (20171013211938)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "user_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013211938"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTicketStates (20171013212247)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ticket_states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013212247"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseTokenAuthCreateUsers (20171013222939)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar, "father_last_name" varchar, "mother_last_name" varchar, "email" varchar, "dependence_id" integer, "role_id" integer, "tokens" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_68b15ae88c"
+FOREIGN KEY ("dependence_id")
+  REFERENCES "dependences" ("id")
+, CONSTRAINT "fk_rails_642f17018b"
+FOREIGN KEY ("role_id")
+  REFERENCES "roles" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_dependence_id" ON "users" ("dependence_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_role_id" ON "users" ("role_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013222939"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to FixRoleNameToUserRole (20171013231446)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime DEFAULT NULL, "last_sign_in_at" datetime DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime DEFAULT NULL, "confirmation_sent_at" datetime DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "father_last_name" varchar DEFAULT NULL, "mother_last_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "dependence_id" integer DEFAULT NULL, "user_role_id" integer DEFAULT NULL, "tokens" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_confirmation_token" ON "ausers" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_uid_and_provider" ON "ausers" ("uid", "provider")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_role_id" ON "ausers" ("user_role_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_dependence_id" ON "ausers" ("dependence_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at")
+                     SELECT "id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","role_id","tokens","created_at","updated_at" FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime DEFAULT NULL, "last_sign_in_at" datetime DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime DEFAULT NULL, "confirmation_sent_at" datetime DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "father_last_name" varchar DEFAULT NULL, "mother_last_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "dependence_id" integer DEFAULT NULL, "user_role_id" integer DEFAULT NULL, "tokens" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_dependence_id" ON "users" ("dependence_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_role_id" ON "users" ("user_role_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at")
+                     SELECT "id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_user_role_id" ON "users" ("user_role_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP INDEX "index_users_on_role_id"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013231446"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-16 06:37:02.854416"], ["updated_at", "2017-10-16 06:37:02.854416"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_dependences_on_campus_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_dependences_on_campus_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_user_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_user_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "campus_locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Colima"], ["created_at", "2017-10-16 06:37:08.384426"], ["updated_at", "2017-10-16 06:37:08.384426"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "campus_locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Manzanillo"], ["created_at", "2017-10-16 06:37:08.386704"], ["updated_at", "2017-10-16 06:37:08.386704"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Load (0.2ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dependences" ("name", "campus_location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Facultad de Telemática"], ["campus_location_id", 1], ["created_at", "2017-10-16 06:37:08.408340"], ["updated_at", "2017-10-16 06:37:08.408340"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dependences" ("name", "campus_location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Facultad de gastronomía"], ["campus_location_id", 2], ["created_at", "2017-10-16 06:37:08.410948"], ["updated_at", "2017-10-16 06:37:08.410948"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/auth?confirm_success_url=asdadsasd" for 127.0.0.1 at 2017-10-16 01:37:27 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "confirm_success_url"=>"asdadsasd", "registration_custom"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd@hotmail.com"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "father_last_name", "mother_last_name", "email", "dependence_id", "user_role_id", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "paco_cd@hotmail.com"], ["encrypted_password", "$2a$10$XYurYeC9PNiKQZ6CuWRcce5Z2nJXrWzz9Do.k2fU.ZPM0T6X7X0tO"], ["name", "Paco"], ["father_last_name", "Chacon"], ["mother_last_name", "de Dios"], ["email", "paco_cd@hotmail.com"], ["dependence_id", 1], ["user_role_id", 1], ["tokens", "{}"], ["created_at", "2017-10-16 06:37:27.551303"], ["updated_at", "2017-10-16 06:37:27.551303"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"expiry\":1509349047}}"], ["updated_at", "2017-10-16 06:37:27.612086"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"}}"], ["updated_at", "2017-10-16 06:37:27.677112"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 210ms (Views: 0.4ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/auth?confirm_success_url=asdadsasd" for 127.0.0.1 at 2017-10-16 01:40:29 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd1@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "confirm_success_url"=>"asdadsasd", "registration_custom"=>{"email"=>"paco_cd1@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd1@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd1@hotmail.com"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "father_last_name", "mother_last_name", "email", "dependence_id", "user_role_id", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "paco_cd1@hotmail.com"], ["encrypted_password", "$2a$10$D1hHuT.b7FBccHEpcjmyC.lSkdYbU1PUj9E6iRFkPn/3gz7FWM2IS"], ["name", "Paco"], ["father_last_name", "Chacon"], ["mother_last_name", "de Dios"], ["email", "paco_cd1@hotmail.com"], ["dependence_id", 1], ["user_role_id", 1], ["tokens", "{}"], ["created_at", "2017-10-16 06:40:29.744808"], ["updated_at", "2017-10-16 06:40:29.744808"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"1b7_XHxCadzFMrsCnDmOjg\":{\"token\":\"$2a$10$TYEjYtrDW7.6NLMqNC/yT.b2ouK.V3jaydGb42AnK6zJfNOBZZSqK\",\"expiry\":1509349229}}"], ["updated_at", "2017-10-16 06:40:29.809982"], ["id", 2]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"1b7_XHxCadzFMrsCnDmOjg\":{\"token\":\"$2a$10$wlkdLaqoIP2ZiJH.mY8MM.dEO5g3a4Efe.nFSqYqlyPGRnBDOOVCi\",\"expiry\":1509349229,\"last_token\":\"$2a$10$TYEjYtrDW7.6NLMqNC/yT.b2ouK.V3jaydGb42AnK6zJfNOBZZSqK\",\"updated_at\":\"2017-10-16T01:40:29.876-05:00\"}}"], ["updated_at", "2017-10-16 06:40:29.877466"], ["id", 2]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 216ms (Views: 0.3ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/auth?confirm_success_url=asdadsasd" for 127.0.0.1 at 2017-10-16 01:40:39 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd1@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "confirm_success_url"=>"asdadsasd", "registration_custom"=>{"email"=>"paco_cd1@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd1@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd1@hotmail.com"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 64ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:45:43 -0500
+  
+SyntaxError (/Users/franciscojavierchacondedios/api-rails/rebuc-api/app/models/user.rb:8: syntax error, unexpected ',', expecting =>
+		super(:include => {:user_role, :dependence})  	
+		                              ^):
+  
+app/models/user.rb:8: syntax error, unexpected ',', expecting =>
+config/routes.rb:2:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:46:01 -0500
+  
+SyntaxError (/Users/franciscojavierchacondedios/api-rails/rebuc-api/app/models/user.rb:8: syntax error, unexpected ')', expecting =>
+		super(:include => :user_role, :dependence)  	
+		                                          ^):
+  
+app/models/user.rb:8: syntax error, unexpected ')', expecting =>
+config/routes.rb:2:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:46:02 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/auth/sign_in"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:46:07 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567}}"], ["updated_at", "2017-10-16 06:46:07.300229"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-10-16 06:46:07.304658"], ["last_sign_in_at", "2017-10-16 06:46:07.304658"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-10-16 06:46:07.305443"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 3.8ms)
+
+
+  
+NoMethodError (undefined method `user_role' for #<User:0x00007ffb0a56b9b0>
+Did you mean?  user_role_id):
+  
+app/models/user.rb:8:in `as_json'
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:47:12 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567},\"6jXbATjSKEjkeaXHVzz4bw\":{\"token\":\"$2a$10$ocjnl1pjHFUdnUvhUg4v4uoyBC8vjwufnmrFFXlYMPr6NG7QmCH5G\",\"expiry\":1509349632}}"], ["updated_at", "2017-10-16 06:47:12.691135"], ["id", 1]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 2], ["current_sign_in_at", "2017-10-16 06:47:12.695986"], ["updated_at", "2017-10-16 06:47:12.696665"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 3.9ms)
+
+
+  
+NoMethodError (undefined method `dependence' for #<User:0x00007ffb0a608a08>
+Did you mean?  dependence_id):
+  
+app/models/user.rb:8:in `as_json'
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:47:19 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567},\"6jXbATjSKEjkeaXHVzz4bw\":{\"token\":\"$2a$10$ocjnl1pjHFUdnUvhUg4v4uoyBC8vjwufnmrFFXlYMPr6NG7QmCH5G\",\"expiry\":1509349632},\"rXd_lmFI8WNFKy1gY_brOg\":{\"token\":\"$2a$10$siY3ubdRU49ZZYtVzAgdfergnviLVOGe22ZedYOSwvxizS/F5Lf1W\",\"expiry\":1509349639}}"], ["updated_at", "2017-10-16 06:47:19.671650"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 3], ["current_sign_in_at", "2017-10-16 06:47:19.676745"], ["last_sign_in_at", "2017-10-16 06:47:12.695986"], ["updated_at", "2017-10-16 06:47:19.677849"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 4.1ms)
+
+
+  
+NoMethodError (undefined method `serializable_hash' for 1:Fixnum):
+  
+app/models/user.rb:8:in `as_json'
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:49:06 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567},\"6jXbATjSKEjkeaXHVzz4bw\":{\"token\":\"$2a$10$ocjnl1pjHFUdnUvhUg4v4uoyBC8vjwufnmrFFXlYMPr6NG7QmCH5G\",\"expiry\":1509349632},\"rXd_lmFI8WNFKy1gY_brOg\":{\"token\":\"$2a$10$siY3ubdRU49ZZYtVzAgdfergnviLVOGe22ZedYOSwvxizS/F5Lf1W\",\"expiry\":1509349639},\"TvUz1HboXnqiY0LJ3TpkAA\":{\"token\":\"$2a$10$hoXMEHMhXmU8dkk1XnpDv.uHeEcHr1CwdSuGT5hWHBbL5OdktLos2\",\"expiry\":1509349747}}"], ["updated_at", "2017-10-16 06:49:07.040526"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 4], ["current_sign_in_at", "2017-10-16 06:49:07.045088"], ["last_sign_in_at", "2017-10-16 06:47:19.676745"], ["updated_at", "2017-10-16 06:49:07.045944"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567},\"6jXbATjSKEjkeaXHVzz4bw\":{\"token\":\"$2a$10$ocjnl1pjHFUdnUvhUg4v4uoyBC8vjwufnmrFFXlYMPr6NG7QmCH5G\",\"expiry\":1509349632},\"rXd_lmFI8WNFKy1gY_brOg\":{\"token\":\"$2a$10$siY3ubdRU49ZZYtVzAgdfergnviLVOGe22ZedYOSwvxizS/F5Lf1W\",\"expiry\":1509349639},\"TvUz1HboXnqiY0LJ3TpkAA\":{\"token\":\"$2a$10$IozLvsuEPPgzfNd63LsMoOKDmNvUkLf6J3.vYU.CWfwdtRA.7VeGO\",\"expiry\":1509349747,\"last_token\":\"$2a$10$hoXMEHMhXmU8dkk1XnpDv.uHeEcHr1CwdSuGT5hWHBbL5OdktLos2\",\"updated_at\":\"2017-10-16T01:49:07.107-05:00\"}}"], ["updated_at", "2017-10-16 06:49:07.111385"], ["id", 1]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 226ms (Views: 0.3ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:49:48 -0500
+  
+SyntaxError (/Users/franciscojavierchacondedios/api-rails/rebuc-api/app/models/user.rb:10: syntax error, unexpected ')', expecting =>
+		super(:include => :dependence, :user_role)  	
+		                                          ^):
+  
+app/models/user.rb:10: syntax error, unexpected ')', expecting =>
+config/routes.rb:2:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:50:14 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567},\"6jXbATjSKEjkeaXHVzz4bw\":{\"token\":\"$2a$10$ocjnl1pjHFUdnUvhUg4v4uoyBC8vjwufnmrFFXlYMPr6NG7QmCH5G\",\"expiry\":1509349632},\"rXd_lmFI8WNFKy1gY_brOg\":{\"token\":\"$2a$10$siY3ubdRU49ZZYtVzAgdfergnviLVOGe22ZedYOSwvxizS/F5Lf1W\",\"expiry\":1509349639},\"TvUz1HboXnqiY0LJ3TpkAA\":{\"token\":\"$2a$10$IozLvsuEPPgzfNd63LsMoOKDmNvUkLf6J3.vYU.CWfwdtRA.7VeGO\",\"expiry\":1509349747,\"last_token\":\"$2a$10$hoXMEHMhXmU8dkk1XnpDv.uHeEcHr1CwdSuGT5hWHBbL5OdktLos2\",\"updated_at\":\"2017-10-16T01:49:07.107-05:00\"},\"lRikNNd6_2C7OAvNgrhP7A\":{\"token\":\"$2a$10$j6WssaDqATejAVbySRgCYuriuI4xdz93QtVEYSFfgtrqkKqN1Aebu\",\"expiry\":1509349815}}"], ["current_sign_in_at", "2017-10-16 06:50:15.109982"], ["last_sign_in_at", "2017-10-16 06:49:07.045088"], ["sign_in_count", 5], ["updated_at", "2017-10-16 06:50:15.111027"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 155ms (Views: 0.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:50:32 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567},\"6jXbATjSKEjkeaXHVzz4bw\":{\"token\":\"$2a$10$ocjnl1pjHFUdnUvhUg4v4uoyBC8vjwufnmrFFXlYMPr6NG7QmCH5G\",\"expiry\":1509349632},\"rXd_lmFI8WNFKy1gY_brOg\":{\"token\":\"$2a$10$siY3ubdRU49ZZYtVzAgdfergnviLVOGe22ZedYOSwvxizS/F5Lf1W\",\"expiry\":1509349639},\"TvUz1HboXnqiY0LJ3TpkAA\":{\"token\":\"$2a$10$IozLvsuEPPgzfNd63LsMoOKDmNvUkLf6J3.vYU.CWfwdtRA.7VeGO\",\"expiry\":1509349747,\"last_token\":\"$2a$10$hoXMEHMhXmU8dkk1XnpDv.uHeEcHr1CwdSuGT5hWHBbL5OdktLos2\",\"updated_at\":\"2017-10-16T01:49:07.107-05:00\"},\"lRikNNd6_2C7OAvNgrhP7A\":{\"token\":\"$2a$10$j6WssaDqATejAVbySRgCYuriuI4xdz93QtVEYSFfgtrqkKqN1Aebu\",\"expiry\":1509349815},\"3lHVcucUZ0LUTiV-W80uIw\":{\"token\":\"$2a$10$4Bg4Em4wuL5STVcoSTYTeOvheRZ0QgcSbuiC4vPloZp35u41MwkHe\",\"expiry\":1509349832}}"], ["current_sign_in_at", "2017-10-16 06:50:32.701824"], ["last_sign_in_at", "2017-10-16 06:50:15.109982"], ["sign_in_count", 6], ["updated_at", "2017-10-16 06:50:32.702654"], ["id", 1]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 153ms (Views: 0.3ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:51:48 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567},\"6jXbATjSKEjkeaXHVzz4bw\":{\"token\":\"$2a$10$ocjnl1pjHFUdnUvhUg4v4uoyBC8vjwufnmrFFXlYMPr6NG7QmCH5G\",\"expiry\":1509349632},\"rXd_lmFI8WNFKy1gY_brOg\":{\"token\":\"$2a$10$siY3ubdRU49ZZYtVzAgdfergnviLVOGe22ZedYOSwvxizS/F5Lf1W\",\"expiry\":1509349639},\"TvUz1HboXnqiY0LJ3TpkAA\":{\"token\":\"$2a$10$IozLvsuEPPgzfNd63LsMoOKDmNvUkLf6J3.vYU.CWfwdtRA.7VeGO\",\"expiry\":1509349747,\"last_token\":\"$2a$10$hoXMEHMhXmU8dkk1XnpDv.uHeEcHr1CwdSuGT5hWHBbL5OdktLos2\",\"updated_at\":\"2017-10-16T01:49:07.107-05:00\"},\"lRikNNd6_2C7OAvNgrhP7A\":{\"token\":\"$2a$10$j6WssaDqATejAVbySRgCYuriuI4xdz93QtVEYSFfgtrqkKqN1Aebu\",\"expiry\":1509349815},\"3lHVcucUZ0LUTiV-W80uIw\":{\"token\":\"$2a$10$4Bg4Em4wuL5STVcoSTYTeOvheRZ0QgcSbuiC4vPloZp35u41MwkHe\",\"expiry\":1509349832},\"xGq0Nr913uAQmG7VXPstJQ\":{\"token\":\"$2a$10$.fJliVhDn3xVKnYO8Lp4KubnTGuybZBUg45Jl4.UGsCBSpuCfAmq.\",\"expiry\":1509349908}}"], ["current_sign_in_at", "2017-10-16 06:51:48.975137"], ["last_sign_in_at", "2017-10-16 06:50:32.701824"], ["sign_in_count", 7], ["updated_at", "2017-10-16 06:51:48.976045"], ["id", 1]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 162ms (Views: 0.4ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 01:52:02 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"pIEAit9Q44Ov8o_pnWnaOA\":{\"token\":\"$2a$10$LAoLbhaFxunALh.5o2t.Xu7KdHrWJiFASac.lh6CE0aMOS6tXZ0Je\",\"expiry\":1509349047,\"last_token\":\"$2a$10$VWNhg2.YLjoOARZRPFqzC.xXbQ8y53NgXxO16qi/BWKmJv5gcUGlW\",\"updated_at\":\"2017-10-16T01:37:27.676-05:00\"},\"XBWvhor-31Qj31ZLB2oo3A\":{\"token\":\"$2a$10$F0eG.SqnCLs28LIfpbu3/OF/ID8xL9gD50E0UGXh1ax0bZDESsDR.\",\"expiry\":1509349567},\"6jXbATjSKEjkeaXHVzz4bw\":{\"token\":\"$2a$10$ocjnl1pjHFUdnUvhUg4v4uoyBC8vjwufnmrFFXlYMPr6NG7QmCH5G\",\"expiry\":1509349632},\"rXd_lmFI8WNFKy1gY_brOg\":{\"token\":\"$2a$10$siY3ubdRU49ZZYtVzAgdfergnviLVOGe22ZedYOSwvxizS/F5Lf1W\",\"expiry\":1509349639},\"TvUz1HboXnqiY0LJ3TpkAA\":{\"token\":\"$2a$10$IozLvsuEPPgzfNd63LsMoOKDmNvUkLf6J3.vYU.CWfwdtRA.7VeGO\",\"expiry\":1509349747,\"last_token\":\"$2a$10$hoXMEHMhXmU8dkk1XnpDv.uHeEcHr1CwdSuGT5hWHBbL5OdktLos2\",\"updated_at\":\"2017-10-16T01:49:07.107-05:00\"},\"lRikNNd6_2C7OAvNgrhP7A\":{\"token\":\"$2a$10$j6WssaDqATejAVbySRgCYuriuI4xdz93QtVEYSFfgtrqkKqN1Aebu\",\"expiry\":1509349815},\"3lHVcucUZ0LUTiV-W80uIw\":{\"token\":\"$2a$10$4Bg4Em4wuL5STVcoSTYTeOvheRZ0QgcSbuiC4vPloZp35u41MwkHe\",\"expiry\":1509349832},\"xGq0Nr913uAQmG7VXPstJQ\":{\"token\":\"$2a$10$.fJliVhDn3xVKnYO8Lp4KubnTGuybZBUg45Jl4.UGsCBSpuCfAmq.\",\"expiry\":1509349908},\"FTCGv2SAyzgSeCO2O8kWVQ\":{\"token\":\"$2a$10$/5vODIHcBtG7yRMzkAkyGOY7aIzas26UzWJ5Tl8rK.4yoZzLigqim\",\"expiry\":1509349923}}"], ["current_sign_in_at", "2017-10-16 06:52:03.092484"], ["last_sign_in_at", "2017-10-16 06:51:48.975137"], ["sign_in_count", 8], ["updated_at", "2017-10-16 06:52:03.093292"], ["id", 1]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 140ms (Views: 0.6ms | ActiveRecord: 4.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCampusLocations (20171013164609)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "campus_locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013164609"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDependences (20171013175444)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "dependences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "campus_location_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_63c5f217ca"
+FOREIGN KEY ("campus_location_id")
+  REFERENCES "campus_locations" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_dependences_on_campus_location_id" ON "dependences" ("campus_location_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013175444"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMovementTags (20171013211835)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "movement_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013211835"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserRoles (20171013211938)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "user_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013211938"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTicketStates (20171013212247)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ticket_states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013212247"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseTokenAuthCreateUsers (20171013222939)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar, "father_last_name" varchar, "mother_last_name" varchar, "email" varchar, "dependence_id" integer, "role_id" integer, "tokens" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_68b15ae88c"
+FOREIGN KEY ("dependence_id")
+  REFERENCES "dependences" ("id")
+, CONSTRAINT "fk_rails_642f17018b"
+FOREIGN KEY ("role_id")
+  REFERENCES "roles" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_dependence_id" ON "users" ("dependence_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_role_id" ON "users" ("role_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013222939"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to FixRoleNameToUserRole (20171013231446)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime DEFAULT NULL, "last_sign_in_at" datetime DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime DEFAULT NULL, "confirmation_sent_at" datetime DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "father_last_name" varchar DEFAULT NULL, "mother_last_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "dependence_id" integer DEFAULT NULL, "user_role_id" integer DEFAULT NULL, "tokens" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_confirmation_token" ON "ausers" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_uid_and_provider" ON "ausers" ("uid", "provider")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_role_id" ON "ausers" ("user_role_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_dependence_id" ON "ausers" ("dependence_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at")
+                     SELECT "id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","role_id","tokens","created_at","updated_at" FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime DEFAULT NULL, "last_sign_in_at" datetime DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime DEFAULT NULL, "confirmation_sent_at" datetime DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "father_last_name" varchar DEFAULT NULL, "mother_last_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "dependence_id" integer DEFAULT NULL, "user_role_id" integer DEFAULT NULL, "tokens" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_dependence_id" ON "users" ("dependence_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_role_id" ON "users" ("user_role_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at")
+                     SELECT "id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_user_role_id" ON "users" ("user_role_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP INDEX "index_users_on_role_id"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013231446"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-16 06:53:59.224353"], ["updated_at", "2017-10-16 06:53:59.224353"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_dependences_on_campus_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_dependences_on_campus_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_user_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_user_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "campus_locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Colima"], ["created_at", "2017-10-16 06:54:03.742705"], ["updated_at", "2017-10-16 06:54:03.742705"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "campus_locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Manzanillo"], ["created_at", "2017-10-16 06:54:03.748404"], ["updated_at", "2017-10-16 06:54:03.748404"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dependences" ("name", "campus_location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Facultad de Telemática"], ["campus_location_id", 1], ["created_at", "2017-10-16 06:54:03.767636"], ["updated_at", "2017-10-16 06:54:03.767636"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dependences" ("name", "campus_location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Facultad de gastronomía"], ["campus_location_id", 2], ["created_at", "2017-10-16 06:54:03.770022"], ["updated_at", "2017-10-16 06:54:03.770022"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "user_roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Admin"], ["created_at", "2017-10-16 06:54:03.775372"], ["updated_at", "2017-10-16 06:54:03.775372"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "user_roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Student"], ["created_at", "2017-10-16 06:54:03.776719"], ["updated_at", "2017-10-16 06:54:03.776719"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/auth?confirm_success_url=asdadsasd" for 127.0.0.1 at 2017-10-16 01:54:15 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "confirm_success_url"=>"asdadsasd", "registration_custom"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+Unpermitted parameters: :password_confirmation, :confirm_success_url, :registration_custom
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd@hotmail.com"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "father_last_name", "mother_last_name", "email", "dependence_id", "user_role_id", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "paco_cd@hotmail.com"], ["encrypted_password", "$2a$10$I0SCIQqOQ0SmI7NUqUIJVuJgrqAuVII8kyHKjmUlZPw2iwleJKPc6"], ["name", "Paco"], ["father_last_name", "Chacon"], ["mother_last_name", "de Dios"], ["email", "paco_cd@hotmail.com"], ["dependence_id", 1], ["user_role_id", 1], ["tokens", "{}"], ["created_at", "2017-10-16 06:54:15.380805"], ["updated_at", "2017-10-16 06:54:15.380805"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"rPPlXaLeKYjcGtzLMkg8Qw\":{\"token\":\"$2a$10$jVz/7tATL9gduGhjNeOdHeif3TBjTlzqXkS5S6TJLyfLhw61IpIWm\",\"expiry\":1509350055}}"], ["updated_at", "2017-10-16 06:54:15.441157"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"rPPlXaLeKYjcGtzLMkg8Qw\":{\"token\":\"$2a$10$wWDLz9TBlyYET65R22eUZu8RUwL3YNfxX82.WxTqyjLnjQdQE1zbO\",\"expiry\":1509350055,\"last_token\":\"$2a$10$jVz/7tATL9gduGhjNeOdHeif3TBjTlzqXkS5S6TJLyfLhw61IpIWm\",\"updated_at\":\"2017-10-16T01:54:15.507-05:00\"}}"], ["updated_at", "2017-10-16 06:54:15.510191"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 236ms (Views: 0.4ms | ActiveRecord: 9.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCampusLocations (20171013164609)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "campus_locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013164609"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDependences (20171013175444)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "dependences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "campus_location_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_63c5f217ca"
+FOREIGN KEY ("campus_location_id")
+  REFERENCES "campus_locations" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_dependences_on_campus_location_id" ON "dependences" ("campus_location_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013175444"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMovementTags (20171013211835)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "movement_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013211835"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserRoles (20171013211938)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "user_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013211938"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTicketStates (20171013212247)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ticket_states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013212247"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseTokenAuthCreateUsers (20171013222939)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "name" varchar, "father_last_name" varchar, "mother_last_name" varchar, "email" varchar, "dependence_id" integer, "role_id" integer, "tokens" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_68b15ae88c"
+FOREIGN KEY ("dependence_id")
+  REFERENCES "dependences" ("id")
+, CONSTRAINT "fk_rails_642f17018b"
+FOREIGN KEY ("role_id")
+  REFERENCES "roles" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_dependence_id" ON "users" ("dependence_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_role_id" ON "users" ("role_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013222939"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to FixRoleNameToUserRole (20171013231446)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime DEFAULT NULL, "last_sign_in_at" datetime DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime DEFAULT NULL, "confirmation_sent_at" datetime DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "father_last_name" varchar DEFAULT NULL, "mother_last_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "dependence_id" integer DEFAULT NULL, "user_role_id" integer DEFAULT NULL, "tokens" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_confirmation_token" ON "ausers" ("confirmation_token")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_uid_and_provider" ON "ausers" ("uid", "provider")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_role_id" ON "ausers" ("user_role_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ausers_on_dependence_id" ON "ausers" ("dependence_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at")
+                     SELECT "id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","role_id","tokens","created_at","updated_at" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar DEFAULT 'email' NOT NULL, "uid" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime DEFAULT NULL, "last_sign_in_at" datetime DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime DEFAULT NULL, "confirmation_sent_at" datetime DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "father_last_name" varchar DEFAULT NULL, "mother_last_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "dependence_id" integer DEFAULT NULL, "user_role_id" integer DEFAULT NULL, "tokens" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_dependence_id" ON "users" ("dependence_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_role_id" ON "users" ("user_role_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at")
+                     SELECT "id","provider","uid","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email","name","father_last_name","mother_last_name","email","dependence_id","user_role_id","tokens","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_user_role_id" ON "users" ("user_role_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP INDEX "index_users_on_role_id"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171013231446"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-16 07:04:27.047493"], ["updated_at", "2017-10-16 07:04:27.047493"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_dependences_on_campus_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_dependences_on_campus_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_user_role_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_user_role_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid_and_provider' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_dependence_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "campus_locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Colima"], ["created_at", "2017-10-16 07:04:34.691568"], ["updated_at", "2017-10-16 07:04:34.691568"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "campus_locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Manzanillo"], ["created_at", "2017-10-16 07:04:34.697155"], ["updated_at", "2017-10-16 07:04:34.697155"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dependences" ("name", "campus_location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Facultad de Telemática"], ["campus_location_id", 1], ["created_at", "2017-10-16 07:04:34.715554"], ["updated_at", "2017-10-16 07:04:34.715554"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dependences" ("name", "campus_location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Facultad de gastronomía"], ["campus_location_id", 2], ["created_at", "2017-10-16 07:04:34.718928"], ["updated_at", "2017-10-16 07:04:34.718928"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Admin"], ["created_at", "2017-10-16 07:04:34.727267"], ["updated_at", "2017-10-16 07:04:34.727267"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Student"], ["created_at", "2017-10-16 07:04:34.729009"], ["updated_at", "2017-10-16 07:04:34.729009"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 02:05:26 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd@hotmail.com"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "father_last_name", "mother_last_name", "email", "dependence_id", "user_role_id", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "paco_cd@hotmail.com"], ["encrypted_password", "$2a$10$v1fUuXoT5Dloprdd02Ug8OfXmkp7f4Ml74LT5uliRGB0.r0Q78WOW"], ["name", "Paco"], ["father_last_name", "Chacon"], ["mother_last_name", "de Dios"], ["email", "paco_cd@hotmail.com"], ["dependence_id", 1], ["user_role_id", 1], ["tokens", "{}"], ["created_at", "2017-10-16 07:05:26.880318"], ["updated_at", "2017-10-16 07:05:26.880318"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"av39zNFOu5UtIOlRWsXgkw\":{\"token\":\"$2a$10$Sjt4P1RjyUmqpKNToa7ipe1Iq6ejeleasKRdD0xgsU/kXMYeyThaS\",\"expiry\":1509350726}}"], ["updated_at", "2017-10-16 07:05:26.941472"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"av39zNFOu5UtIOlRWsXgkw\":{\"token\":\"$2a$10$ujz/fZTZyBzw7ZwWtKH4cuCqS4M7MCaonYUeyl6PLdAm9CS9Lar3K\",\"expiry\":1509350727,\"last_token\":\"$2a$10$Sjt4P1RjyUmqpKNToa7ipe1Iq6ejeleasKRdD0xgsU/kXMYeyThaS\",\"updated_at\":\"2017-10-16T02:05:27.005-05:00\"}}"], ["updated_at", "2017-10-16 07:05:27.010346"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 231ms (Views: 0.5ms | ActiveRecord: 9.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 02:06:02 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd@hotmail.com"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 66ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 02:06:49 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd1@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd1@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd1@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd1@hotmail.com"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "father_last_name", "mother_last_name", "email", "dependence_id", "user_role_id", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "paco_cd1@hotmail.com"], ["encrypted_password", "$2a$10$h61z/fbepoNhFVESMqC8JeC.LSearql41x9AP4.EoXCWqTLE9Smpu"], ["name", "Paco"], ["father_last_name", "Chacon"], ["mother_last_name", "de Dios"], ["email", "paco_cd1@hotmail.com"], ["dependence_id", 1], ["user_role_id", 1], ["tokens", "{}"], ["created_at", "2017-10-16 07:06:49.725505"], ["updated_at", "2017-10-16 07:06:49.725505"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"7ViRqn26Bv37wKzVTs_nAw\":{\"token\":\"$2a$10$0/a76JgmQHreMekScLd31.owzPCi29YyDXm5SqOWtx2f1fngXZl.O\",\"expiry\":1509350809}}"], ["updated_at", "2017-10-16 07:06:49.791020"], ["id", 2]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"7ViRqn26Bv37wKzVTs_nAw\":{\"token\":\"$2a$10$JqfybsB8fsp40FNCggdpouKERFl.Y/aVfBQcXTTBwzIUHkHUzRUYG\",\"expiry\":1509350809,\"last_token\":\"$2a$10$0/a76JgmQHreMekScLd31.owzPCi29YyDXm5SqOWtx2f1fngXZl.O\",\"updated_at\":\"2017-10-16T02:06:49.860-05:00\"}}"], ["updated_at", "2017-10-16 07:06:49.862794"], ["id", 2]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 204ms (Views: 0.5ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 02:06:56 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"av39zNFOu5UtIOlRWsXgkw\":{\"token\":\"$2a$10$ujz/fZTZyBzw7ZwWtKH4cuCqS4M7MCaonYUeyl6PLdAm9CS9Lar3K\",\"expiry\":1509350727,\"last_token\":\"$2a$10$Sjt4P1RjyUmqpKNToa7ipe1Iq6ejeleasKRdD0xgsU/kXMYeyThaS\",\"updated_at\":\"2017-10-16T02:05:27.005-05:00\"},\"E4P2-_iJPtG7P9EAl1v5BA\":{\"token\":\"$2a$10$EiUY9zB2tOBTZJsX1hQ4tOI/Q2B0xS8cYUXAgZuh6p7to35x3dDs.\",\"expiry\":1509350816}}"], ["updated_at", "2017-10-16 07:06:56.191791"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-10-16 07:06:56.196139"], ["last_sign_in_at", "2017-10-16 07:06:56.196139"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-10-16 07:06:56.197314"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"av39zNFOu5UtIOlRWsXgkw\":{\"token\":\"$2a$10$ujz/fZTZyBzw7ZwWtKH4cuCqS4M7MCaonYUeyl6PLdAm9CS9Lar3K\",\"expiry\":1509350727,\"last_token\":\"$2a$10$Sjt4P1RjyUmqpKNToa7ipe1Iq6ejeleasKRdD0xgsU/kXMYeyThaS\",\"updated_at\":\"2017-10-16T02:05:27.005-05:00\"},\"E4P2-_iJPtG7P9EAl1v5BA\":{\"token\":\"$2a$10$HX21Wl8jZcuMSVRbNoVtruxiKW8KzjwKGVSBnFYAVwwmzHdrxbXEy\",\"expiry\":1509350816,\"last_token\":\"$2a$10$EiUY9zB2tOBTZJsX1hQ4tOI/Q2B0xS8cYUXAgZuh6p7to35x3dDs.\",\"updated_at\":\"2017-10-16T02:06:56.265-05:00\"}}"], ["updated_at", "2017-10-16 07:06:56.267877"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 227ms (Views: 0.5ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/auth/sign_up" for 127.0.0.1 at 2017-10-16 02:07:39 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/auth/sign_up"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 02:07:55 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd@hotmail.com"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 71ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 02:09:41 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"av39zNFOu5UtIOlRWsXgkw\":{\"token\":\"$2a$10$ujz/fZTZyBzw7ZwWtKH4cuCqS4M7MCaonYUeyl6PLdAm9CS9Lar3K\",\"expiry\":1509350727,\"last_token\":\"$2a$10$Sjt4P1RjyUmqpKNToa7ipe1Iq6ejeleasKRdD0xgsU/kXMYeyThaS\",\"updated_at\":\"2017-10-16T02:05:27.005-05:00\"},\"E4P2-_iJPtG7P9EAl1v5BA\":{\"token\":\"$2a$10$HX21Wl8jZcuMSVRbNoVtruxiKW8KzjwKGVSBnFYAVwwmzHdrxbXEy\",\"expiry\":1509350816,\"last_token\":\"$2a$10$EiUY9zB2tOBTZJsX1hQ4tOI/Q2B0xS8cYUXAgZuh6p7to35x3dDs.\",\"updated_at\":\"2017-10-16T02:06:56.265-05:00\"},\"A8oxEcan3xPFqNdR1gvvRA\":{\"token\":\"$2a$10$LhUQvurEeE1oyWBK/7adD.HjbmXFhghF3LfZ6CrLnf58bh9tfmCq.\",\"expiry\":1509350981}}"], ["updated_at", "2017-10-16 07:09:41.648538"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 2], ["current_sign_in_at", "2017-10-16 07:09:41.652814"], ["updated_at", "2017-10-16 07:09:41.653682"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"av39zNFOu5UtIOlRWsXgkw\":{\"token\":\"$2a$10$ujz/fZTZyBzw7ZwWtKH4cuCqS4M7MCaonYUeyl6PLdAm9CS9Lar3K\",\"expiry\":1509350727,\"last_token\":\"$2a$10$Sjt4P1RjyUmqpKNToa7ipe1Iq6ejeleasKRdD0xgsU/kXMYeyThaS\",\"updated_at\":\"2017-10-16T02:05:27.005-05:00\"},\"E4P2-_iJPtG7P9EAl1v5BA\":{\"token\":\"$2a$10$HX21Wl8jZcuMSVRbNoVtruxiKW8KzjwKGVSBnFYAVwwmzHdrxbXEy\",\"expiry\":1509350816,\"last_token\":\"$2a$10$EiUY9zB2tOBTZJsX1hQ4tOI/Q2B0xS8cYUXAgZuh6p7to35x3dDs.\",\"updated_at\":\"2017-10-16T02:06:56.265-05:00\"},\"A8oxEcan3xPFqNdR1gvvRA\":{\"token\":\"$2a$10$8u5FeBckS5JteXo7PN8iKezcf388zUr4iQxapVPIXOLEYxTxEVL1y\",\"expiry\":1509350981,\"last_token\":\"$2a$10$LhUQvurEeE1oyWBK/7adD.HjbmXFhghF3LfZ6CrLnf58bh9tfmCq.\",\"updated_at\":\"2017-10-16T02:09:41.718-05:00\"}}"], ["updated_at", "2017-10-16 07:09:41.720563"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 210ms (Views: 0.3ms | ActiveRecord: 6.6ms)
+
+
