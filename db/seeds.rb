@@ -46,3 +46,14 @@ ticket_states = TicketStates.create(
 		}
 	]
 )
+
+movement_tags = MovementTag.create(
+	[
+		{
+			name: "Response"
+		},
+		{
+			name: "Cancelled"
+		}
+	]
+)
