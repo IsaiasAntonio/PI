@@ -18,7 +18,6 @@ class Devise::RegistrationCustomController < DeviseTokenAuth::RegistrationsContr
 	private
 	def render_create_success
 		render json: {
-			status: 'success',
 			user:   resource_data
 		}
 	end

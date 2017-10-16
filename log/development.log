@@ -6893,3 +6893,94 @@ Unpermitted parameter: :session
 Completed 200 OK in 210ms (Views: 0.3ms | ActiveRecord: 6.6ms)
 
 
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 14:34:40 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.4ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.4ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"av39zNFOu5UtIOlRWsXgkw\":{\"token\":\"$2a$10$ujz/fZTZyBzw7ZwWtKH4cuCqS4M7MCaonYUeyl6PLdAm9CS9Lar3K\",\"expiry\":1509350727,\"last_token\":\"$2a$10$Sjt4P1RjyUmqpKNToa7ipe1Iq6ejeleasKRdD0xgsU/kXMYeyThaS\",\"updated_at\":\"2017-10-16T02:05:27.005-05:00\"},\"E4P2-_iJPtG7P9EAl1v5BA\":{\"token\":\"$2a$10$HX21Wl8jZcuMSVRbNoVtruxiKW8KzjwKGVSBnFYAVwwmzHdrxbXEy\",\"expiry\":1509350816,\"last_token\":\"$2a$10$EiUY9zB2tOBTZJsX1hQ4tOI/Q2B0xS8cYUXAgZuh6p7to35x3dDs.\",\"updated_at\":\"2017-10-16T02:06:56.265-05:00\"},\"A8oxEcan3xPFqNdR1gvvRA\":{\"token\":\"$2a$10$8u5FeBckS5JteXo7PN8iKezcf388zUr4iQxapVPIXOLEYxTxEVL1y\",\"expiry\":1509350981,\"last_token\":\"$2a$10$LhUQvurEeE1oyWBK/7adD.HjbmXFhghF3LfZ6CrLnf58bh9tfmCq.\",\"updated_at\":\"2017-10-16T02:09:41.718-05:00\"},\"7YEwkKPTmMk8CQuyTIsMlA\":{\"token\":\"$2a$10$Te8BKNMfFbolBzuyoGD9f.V1xfmVGvhPXlYMeXwTtyYyF.h2F5qp2\",\"expiry\":1509395680}}"], ["updated_at", "2017-10-16 19:34:40.723058"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 3], ["current_sign_in_at", "2017-10-16 19:34:40.743759"], ["last_sign_in_at", "2017-10-16 07:09:41.652814"], ["updated_at", "2017-10-16 19:34:40.744740"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"av39zNFOu5UtIOlRWsXgkw\":{\"token\":\"$2a$10$ujz/fZTZyBzw7ZwWtKH4cuCqS4M7MCaonYUeyl6PLdAm9CS9Lar3K\",\"expiry\":1509350727,\"last_token\":\"$2a$10$Sjt4P1RjyUmqpKNToa7ipe1Iq6ejeleasKRdD0xgsU/kXMYeyThaS\",\"updated_at\":\"2017-10-16T02:05:27.005-05:00\"},\"E4P2-_iJPtG7P9EAl1v5BA\":{\"token\":\"$2a$10$HX21Wl8jZcuMSVRbNoVtruxiKW8KzjwKGVSBnFYAVwwmzHdrxbXEy\",\"expiry\":1509350816,\"last_token\":\"$2a$10$EiUY9zB2tOBTZJsX1hQ4tOI/Q2B0xS8cYUXAgZuh6p7to35x3dDs.\",\"updated_at\":\"2017-10-16T02:06:56.265-05:00\"},\"A8oxEcan3xPFqNdR1gvvRA\":{\"token\":\"$2a$10$8u5FeBckS5JteXo7PN8iKezcf388zUr4iQxapVPIXOLEYxTxEVL1y\",\"expiry\":1509350981,\"last_token\":\"$2a$10$LhUQvurEeE1oyWBK/7adD.HjbmXFhghF3LfZ6CrLnf58bh9tfmCq.\",\"updated_at\":\"2017-10-16T02:09:41.718-05:00\"},\"7YEwkKPTmMk8CQuyTIsMlA\":{\"token\":\"$2a$10$DOWlKI1jc8wfjOhWYLrQaeWLvRJVWU6.7Og0qapna6FX23jMJtq46\",\"expiry\":1509395680,\"last_token\":\"$2a$10$Te8BKNMfFbolBzuyoGD9f.V1xfmVGvhPXlYMeXwTtyYyF.h2F5qp2\",\"updated_at\":\"2017-10-16T14:34:40.815-05:00\"}}"], ["updated_at", "2017-10-16 19:34:40.817854"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 312ms (Views: 0.5ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 14:35:03 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd2@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd2@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd2@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd2@hotmail.com"]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "father_last_name", "mother_last_name", "email", "dependence_id", "user_role_id", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "paco_cd2@hotmail.com"], ["encrypted_password", "$2a$10$MjzYn1wstB2FLvW7kRGGau1TK9kViVQg654sgZNKieJR6RoOE02ba"], ["name", "Paco"], ["father_last_name", "Chacon"], ["mother_last_name", "de Dios"], ["email", "paco_cd2@hotmail.com"], ["dependence_id", 1], ["user_role_id", 1], ["tokens", "{}"], ["created_at", "2017-10-16 19:35:03.142413"], ["updated_at", "2017-10-16 19:35:03.142413"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"ur8W-InyMv9vCSo6P6aW7w\":{\"token\":\"$2a$10$xhL.MRtCKyhpD8tZTG4EeeaEIIzHpkD8uNZ9ilyCrZqjLEfPalcr6\",\"expiry\":1509395703}}"], ["updated_at", "2017-10-16 19:35:03.207651"], ["id", 3]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"ur8W-InyMv9vCSo6P6aW7w\":{\"token\":\"$2a$10$Qci85mHzYzP4THthqZaQmO5wmSbT9TajZ4NMvPDcZNXdMua0.dCve\",\"expiry\":1509395703,\"last_token\":\"$2a$10$xhL.MRtCKyhpD8tZTG4EeeaEIIzHpkD8uNZ9ilyCrZqjLEfPalcr6\",\"updated_at\":\"2017-10-16T14:35:03.280-05:00\"}}"], ["updated_at", "2017-10-16 19:35:03.282857"], ["id", 3]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 233ms (Views: 0.4ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 14:35:44 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd3@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd3@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd3@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd3@hotmail.com"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "father_last_name", "mother_last_name", "email", "dependence_id", "user_role_id", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "paco_cd3@hotmail.com"], ["encrypted_password", "$2a$10$zqa20P.RWoar9HkpRYU/SOLWPSMgGl76YIvQQLt2xFheG2OxvI/su"], ["name", "Paco"], ["father_last_name", "Chacon"], ["mother_last_name", "de Dios"], ["email", "paco_cd3@hotmail.com"], ["dependence_id", 1], ["user_role_id", 1], ["tokens", "{}"], ["created_at", "2017-10-16 19:35:54.324234"], ["updated_at", "2017-10-16 19:35:54.324234"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"iM-m92LLdgb2Vm4Y7hDByA\":{\"token\":\"$2a$10$SR3mdsK2ntbbyGCOW2QkJ.xr5iexFYIxddctHclZYaDCKV2Ps4B7S\",\"expiry\":1509395754}}"], ["updated_at", "2017-10-16 19:35:54.389098"], ["id", 4]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"iM-m92LLdgb2Vm4Y7hDByA\":{\"token\":\"$2a$10$QvmP84ZAVzomC3YiUIncxe5.FkIVC16pUZ2VsU7Qzej034jR3I70a\",\"expiry\":1509395754,\"last_token\":\"$2a$10$SR3mdsK2ntbbyGCOW2QkJ.xr5iexFYIxddctHclZYaDCKV2Ps4B7S\",\"updated_at\":\"2017-10-16T14:35:54.456-05:00\"}}"], ["updated_at", "2017-10-16 19:35:54.458953"], ["id", 4]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 235ms (Views: 0.4ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 14:36:29 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd3@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd3@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd3@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd3@hotmail.com"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 65ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
