@@ -1,24 +1,9 @@
-# README
+# Project details
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## API application using:
 
-Things you may want to cover:
+* Ruby version: 2.3.5
 
-* Ruby version
+* Rails version: 5.1.4
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Device auth token
