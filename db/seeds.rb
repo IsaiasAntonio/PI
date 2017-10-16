@@ -36,7 +36,7 @@ user_roles = UserRole.create(
 	]
 )
 
-ticket_states = TicketStates.create(
+ticket_states = TicketState.create(
 	[
 		{
 			name: "Active"
