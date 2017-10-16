@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  movement_tag: one
+  ticket: one
+
+two:
+  description: MyText
+  movement_tag: two
+  ticket: two
