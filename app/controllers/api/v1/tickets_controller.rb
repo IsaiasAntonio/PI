@@ -1,2 +1,2 @@
-class TicketsController < ApplicationController
+class Api::V1::TicketsController < ApplicationController
 end
