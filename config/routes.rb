@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
   	namespace :v1 do
-			resources :campus_locations
-			resources :dependences
+      resources :campus_locations
+      resources :dependences
+      resources :movement_tags
       resources :ticket_states
       resources :user_roles
-      resources :movement_tags
   	end
   end
 end
