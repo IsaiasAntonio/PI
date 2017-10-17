@@ -1,4 +1,6 @@
 class Api::V1::CampusLocationsController < ApplicationController
+	rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
+
 	def index
 		@campus_locations = CampusLocation.all
 		render json: { campus_locations: @campus_locations }, status: 200
@@ -45,4 +47,8 @@ class Api::V1::CampusLocationsController < ApplicationController
 	def campus_location_params
 		params.require(:campus_location).permit(:name)
 	end
+
+def render_record_not_found
+	render json: { error: "La locación del campus no se encontró." }, status: 404
+end
 end
