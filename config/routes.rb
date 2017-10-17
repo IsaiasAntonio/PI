@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :campus_locations
       resources :dependences
       resources :movement_tags
+      resources :tickets
       resources :ticket_states
       resources :user_roles
   	end
