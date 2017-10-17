@@ -8648,3 +8648,188 @@ FOREIGN KEY ("ticket_id")
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "movement_tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cancelled"], ["created_at", "2017-10-16 23:35:25.375817"], ["updated_at", "2017-10-16 23:35:25.375817"]]
   [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 18:48:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 23ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 18:48:39 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd@hotmail.com"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "father_last_name", "mother_last_name", "email", "dependence_id", "user_role_id", "tokens", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "paco_cd@hotmail.com"], ["encrypted_password", "$2a$10$uQYSktjWS7vDgBrE6jkINeFYzGkLZfsuQYocc.r6Gh1e0jEmsTan6"], ["name", "Paco"], ["father_last_name", "Chacon"], ["mother_last_name", "de Dios"], ["email", "paco_cd@hotmail.com"], ["dependence_id", 1], ["user_role_id", 1], ["tokens", "{}"], ["created_at", "2017-10-16 23:48:39.391557"], ["updated_at", "2017-10-16 23:48:39.391557"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"uJr9GqdIedQDTaloa-3Jpw\":{\"token\":\"$2a$10$zJRGMNyLQEspG7F/ua4Y2OI6qc/7zUDOu8HpLNTgOj5AndrT0Hbxa\",\"expiry\":1509410919}}"], ["updated_at", "2017-10-16 23:48:39.458819"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"uJr9GqdIedQDTaloa-3Jpw\":{\"token\":\"$2a$10$yFitLI6cObXDZ2zRiV.tnOEwPD9feP8vwnN7Vpol9pF4qLMGX4gZK\",\"expiry\":1509410919,\"last_token\":\"$2a$10$zJRGMNyLQEspG7F/ua4Y2OI6qc/7zUDOu8HpLNTgOj5AndrT0Hbxa\",\"updated_at\":\"2017-10-16T18:48:39.529-05:00\"}}"], ["updated_at", "2017-10-16 23:48:39.536521"], ["id", 1]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 267ms (Views: 0.4ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 18:48:56 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"uJr9GqdIedQDTaloa-3Jpw\":{\"token\":\"$2a$10$yFitLI6cObXDZ2zRiV.tnOEwPD9feP8vwnN7Vpol9pF4qLMGX4gZK\",\"expiry\":1509410919,\"last_token\":\"$2a$10$zJRGMNyLQEspG7F/ua4Y2OI6qc/7zUDOu8HpLNTgOj5AndrT0Hbxa\",\"updated_at\":\"2017-10-16T18:48:39.529-05:00\"},\"l4HBxqz9Fw93Jp22a1QDCA\":{\"token\":\"$2a$10$A5VyjKXXQ2UABpe85r8zQuxWsuPcm7.E5x8a3It4yBEY9Chi8fHvu\",\"expiry\":1509410936}}"], ["updated_at", "2017-10-16 23:48:56.176410"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-10-16 23:48:56.180672"], ["last_sign_in_at", "2017-10-16 23:48:56.180672"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-10-16 23:48:56.181485"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"uJr9GqdIedQDTaloa-3Jpw\":{\"token\":\"$2a$10$yFitLI6cObXDZ2zRiV.tnOEwPD9feP8vwnN7Vpol9pF4qLMGX4gZK\",\"expiry\":1509410919,\"last_token\":\"$2a$10$zJRGMNyLQEspG7F/ua4Y2OI6qc/7zUDOu8HpLNTgOj5AndrT0Hbxa\",\"updated_at\":\"2017-10-16T18:48:39.529-05:00\"},\"l4HBxqz9Fw93Jp22a1QDCA\":{\"token\":\"$2a$10$x3OwZop1vFJLEo0A8Z8SwOu9f.AkLqug.FXMinEqpdq1MQw2k0EKi\",\"expiry\":1509410936,\"last_token\":\"$2a$10$A5VyjKXXQ2UABpe85r8zQuxWsuPcm7.E5x8a3It4yBEY9Chi8fHvu\",\"updated_at\":\"2017-10-16T18:48:56.249-05:00\"}}"], ["updated_at", "2017-10-16 23:48:56.251666"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 203ms (Views: 0.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/campus_locations" for 127.0.0.1 at 2017-10-16 18:49:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/campus_locations"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-16 18:49:30 -0500
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-16 18:49:31 -0500
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/dependences" for 127.0.0.1 at 2017-10-16 18:49:38 -0500
+Processing by Api::V1::DependencesController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "paco123@hotmail.com"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/dependences" for 127.0.0.1 at 2017-10-16 18:50:07 -0500
+Processing by Api::V1::DependencesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT "dependences".* FROM "dependences"[0m
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"uJr9GqdIedQDTaloa-3Jpw\":{\"token\":\"$2a$10$yFitLI6cObXDZ2zRiV.tnOEwPD9feP8vwnN7Vpol9pF4qLMGX4gZK\",\"expiry\":1509410919,\"last_token\":\"$2a$10$zJRGMNyLQEspG7F/ua4Y2OI6qc/7zUDOu8HpLNTgOj5AndrT0Hbxa\",\"updated_at\":\"2017-10-16T18:48:39.529-05:00\"},\"l4HBxqz9Fw93Jp22a1QDCA\":{\"token\":\"$2a$10$NngwJigERcd2oUs5d8uLhO1zyuWCR4Yz4EqgQREdnN4hMyosthzFG\",\"expiry\":1509411007,\"last_token\":\"$2a$10$x3OwZop1vFJLEo0A8Z8SwOu9f.AkLqug.FXMinEqpdq1MQw2k0EKi\",\"updated_at\":\"2017-10-16T18:50:07.534-05:00\"}}"], ["updated_at", "2017-10-16 23:50:07.537520"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 136ms (Views: 3.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/dependences" for 127.0.0.1 at 2017-10-16 18:50:31 -0500
+Processing by Api::V1::DependencesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.2ms)[0m  [1m[34mSELECT "dependences".* FROM "dependences"[0m
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.0ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"uJr9GqdIedQDTaloa-3Jpw\":{\"token\":\"$2a$10$yFitLI6cObXDZ2zRiV.tnOEwPD9feP8vwnN7Vpol9pF4qLMGX4gZK\",\"expiry\":1509410919,\"last_token\":\"$2a$10$zJRGMNyLQEspG7F/ua4Y2OI6qc/7zUDOu8HpLNTgOj5AndrT0Hbxa\",\"updated_at\":\"2017-10-16T18:48:39.529-05:00\"},\"l4HBxqz9Fw93Jp22a1QDCA\":{\"token\":\"$2a$10$9h.99TGFn8wpMvfhT11upeZeR//QIuIbE82Ds/jBIn.aCPlxcILCS\",\"expiry\":1509411031,\"last_token\":\"$2a$10$NngwJigERcd2oUs5d8uLhO1zyuWCR4Yz4EqgQREdnN4hMyosthzFG\",\"updated_at\":\"2017-10-16T18:50:31.273-05:00\"}}"], ["updated_at", "2017-10-16 23:50:31.276165"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 134ms (Views: 2.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/v1/dependences" for 127.0.0.1 at 2017-10-16 18:50:39 -0500
+Processing by Api::V1::DependencesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 61ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2017-10-16 18:59:46 -0500
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd@hotmail.com"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 69ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-10-16 18:59:52 -0500
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'paco_cd@hotmail.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"uJr9GqdIedQDTaloa-3Jpw\":{\"token\":\"$2a$10$yFitLI6cObXDZ2zRiV.tnOEwPD9feP8vwnN7Vpol9pF4qLMGX4gZK\",\"expiry\":1509410919,\"last_token\":\"$2a$10$zJRGMNyLQEspG7F/ua4Y2OI6qc/7zUDOu8HpLNTgOj5AndrT0Hbxa\",\"updated_at\":\"2017-10-16T18:48:39.529-05:00\"},\"l4HBxqz9Fw93Jp22a1QDCA\":{\"token\":\"$2a$10$9h.99TGFn8wpMvfhT11upeZeR//QIuIbE82Ds/jBIn.aCPlxcILCS\",\"expiry\":1509411031,\"last_token\":\"$2a$10$NngwJigERcd2oUs5d8uLhO1zyuWCR4Yz4EqgQREdnN4hMyosthzFG\",\"updated_at\":\"2017-10-16T18:50:31.273-05:00\"},\"Trf9WdPQJ6b0zpBDifbtqA\":{\"token\":\"$2a$10$oqxycEca8u3KZoYCMB1lBuscebg2PPlxbY1eyD7tZ2HdJac8xoBiy\",\"expiry\":1509411592}}"], ["updated_at", "2017-10-16 23:59:52.591051"], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 2], ["current_sign_in_at", "2017-10-16 23:59:52.595529"], ["updated_at", "2017-10-16 23:59:52.596158"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ? [0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"uJr9GqdIedQDTaloa-3Jpw\":{\"token\":\"$2a$10$yFitLI6cObXDZ2zRiV.tnOEwPD9feP8vwnN7Vpol9pF4qLMGX4gZK\",\"expiry\":1509410919,\"last_token\":\"$2a$10$zJRGMNyLQEspG7F/ua4Y2OI6qc/7zUDOu8HpLNTgOj5AndrT0Hbxa\",\"updated_at\":\"2017-10-16T18:48:39.529-05:00\"},\"l4HBxqz9Fw93Jp22a1QDCA\":{\"token\":\"$2a$10$9h.99TGFn8wpMvfhT11upeZeR//QIuIbE82Ds/jBIn.aCPlxcILCS\",\"expiry\":1509411031,\"last_token\":\"$2a$10$NngwJigERcd2oUs5d8uLhO1zyuWCR4Yz4EqgQREdnN4hMyosthzFG\",\"updated_at\":\"2017-10-16T18:50:31.273-05:00\"},\"Trf9WdPQJ6b0zpBDifbtqA\":{\"token\":\"$2a$10$3NgdAUfHhutQmhdX2cZQD.Sky7d7FCtkwb5YS6yNxSxrX4adHUDa.\",\"expiry\":1509411592,\"last_token\":\"$2a$10$oqxycEca8u3KZoYCMB1lBuscebg2PPlxbY1eyD7tZ2HdJac8xoBiy\",\"updated_at\":\"2017-10-16T18:59:52.660-05:00\"}}"], ["updated_at", "2017-10-16 23:59:52.663153"], ["id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 204ms (Views: 0.3ms | ActiveRecord: 6.3ms)
+
+
