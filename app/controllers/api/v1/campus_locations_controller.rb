@@ -10,7 +10,7 @@ class Api::V1::CampusLocationsController < ApplicationController
 	end
 
 	def create
-		@campus_location = CampusLocation.new(create_campus_location_params)
+		@campus_location = CampusLocation.new(campus_location_params)
 		if @campus_location.save
 			render json: { campus_location: @campus_location }, status: 200
 		else
@@ -19,11 +19,7 @@ class Api::V1::CampusLocationsController < ApplicationController
 	end
 
 	private
-	def resource_params
-		params.require(:campus_location).permit(:id, :name)
-	end
-
-	def create_campus_location_params
+	def campus_location_params
 		params.require(:campus_location).permit(:name)
 	end
 end
