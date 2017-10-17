@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 			resources :dependences
       resources :ticket_states
       resources :user_roles
+      resources :movement_tags
   	end
   end
 end
