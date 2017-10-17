@@ -23,6 +23,15 @@ class Api::V1::CampusLocationsController < ApplicationController
 		render json: { campus_location: @campus_location }, status: 200
 	end
 
+	def update
+		@campus_location = CampusLocation.find(params[:id])
+		if @campus_location.update(campus_location_params)
+			render json: { campus_location: @campus_location }, status: 200
+		else
+			render json: { error: "La locación del campus no pudo ser actualizada." }, status: 422
+		end
+	end
+
 	private
 	def campus_location_params
 		params.require(:campus_location).permit(:name)
