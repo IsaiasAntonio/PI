@@ -9576,3 +9576,202 @@ FOREIGN KEY ("ticket_id")
   [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   [1m[36mDependence Load (0.2ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   [1m[36mDependence Load (0.1ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 09:36:49 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (0.3ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/campus_locations/1" for 127.0.0.1 at 2017-10-20 09:36:54 -0500
+Processing by Api::V1::CampusLocationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCampusLocation Load (0.2ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 09:37:03 -0500
+Processing by Api::V1::CampusLocationsController#create as */*
+  Parameters: {"name"=>"Tecomán", "campus_location"=>{"name"=>"Tecomán"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "campus_locations" WHERE "campus_locations"."name" = ? LIMIT ?[0m  [["name", "Tecomán"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 25ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 09:37:09 -0500
+Processing by Api::V1::CampusLocationsController#create as */*
+  Parameters: {"name"=>"asdasd", "campus_location"=>{"name"=>"asdasd"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "campus_locations" WHERE "campus_locations"."name" = ? LIMIT ?[0m  [["name", "asdasd"], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "campus_locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "asdasd"], ["created_at", "2017-10-20 14:37:09.907591"], ["updated_at", "2017-10-20 14:37:09.907591"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/api/v1/campus_locations/6" for 127.0.0.1 at 2017-10-20 09:37:23 -0500
+Processing by Api::V1::CampusLocationsController#update as */*
+  Parameters: {"name"=>"asd123", "id"=>"6", "campus_location"=>{"name"=>"asd123"}}
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "campus_locations" WHERE "campus_locations"."name" = ? AND ("campus_locations"."id" != ?) LIMIT ?[0m  [["name", "asd123"], ["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "campus_locations" SET "name" = ?, "updated_at" = ? WHERE "campus_locations"."id" = ?[0m  [["name", "asd123"], ["updated_at", "2017-10-20 14:37:23.104940"], ["id", 6]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 09:37:26 -0500
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (0.2ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/v1/campus_locations/6" for 127.0.0.1 at 2017-10-20 09:37:33 -0500
+Processing by Api::V1::CampusLocationsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[31mDELETE FROM "campus_locations" WHERE "campus_locations"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 09:37:36 -0500
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (0.2ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 11:52:09 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (0.4ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/campus_locations/1" for 127.0.0.1 at 2017-10-20 11:52:33 -0500
+Processing by Api::V1::CampusLocationsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCampusLocation Load (0.2ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 11:52:43 -0500
+Processing by Api::V1::CampusLocationsController#create as */*
+  Parameters: {"name"=>"Tecomán", "campus_location"=>{"name"=>"Tecomán"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "campus_locations" WHERE "campus_locations"."name" = ? LIMIT ?[0m  [["name", "Tecomán"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 24ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 11:52:52 -0500
+Processing by Api::V1::CampusLocationsController#create as */*
+  Parameters: {"name"=>"Tecomn", "campus_location"=>{"name"=>"Tecomn"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "campus_locations" WHERE "campus_locations"."name" = ? LIMIT ?[0m  [["name", "Tecomn"], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "campus_locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tecomn"], ["created_at", "2017-10-20 16:52:52.259413"], ["updated_at", "2017-10-20 16:52:52.259413"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/api/v1/campus_locations/7" for 127.0.0.1 at 2017-10-20 11:53:06 -0500
+Processing by Api::V1::CampusLocationsController#update as */*
+  Parameters: {"name"=>"Tecomaaaan", "id"=>"7", "campus_location"=>{"name"=>"Tecomaaaan"}}
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCampusLocation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "campus_locations" WHERE "campus_locations"."name" = ? AND ("campus_locations"."id" != ?) LIMIT ?[0m  [["name", "Tecomaaaan"], ["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "campus_locations" SET "name" = ?, "updated_at" = ? WHERE "campus_locations"."id" = ?[0m  [["name", "Tecomaaaan"], ["updated_at", "2017-10-20 16:53:06.274543"], ["id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 11:53:11 -0500
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (0.2ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/v1/campus_locations/7" for 127.0.0.1 at 2017-10-20 11:53:18 -0500
+Processing by Api::V1::CampusLocationsController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mCampusLocation Load (0.1ms)[0m  [1m[34mSELECT  "campus_locations".* FROM "campus_locations" WHERE "campus_locations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[31mDELETE FROM "campus_locations" WHERE "campus_locations"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-20 11:53:22 -0500
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (0.2ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/auth" for 148.213.162.67 at 2017-10-20 12:05:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationCustomController#create as */*
+  Parameters: {"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco", "registration_custom"=>{"email"=>"paco_cd@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user_role_id"=>1, "father_last_name"=>"Chacon", "mother_last_name"=>"de Dios", "dependence_id"=>1, "name"=>"Paco"}}
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+Unpermitted parameters: :password_confirmation, :registration_custom
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDependence Load (0.3ms)[0m  [1m[34mSELECT  "dependences".* FROM "dependences" WHERE "dependences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUserRole Load (0.1ms)[0m  [1m[34mSELECT  "user_roles".* FROM "user_roles" WHERE "user_roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "paco_cd@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = ? AND "users"."email" = ?[0m  [["provider", "email"], ["email", "paco_cd@hotmail.com"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 149ms (Views: 0.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/ticket_movements" for 148.213.162.67 at 2017-10-20 12:09:15 -0500
+Processing by Api::V1::TicketMovementsController#index as */*
+  [1m[36mTicketMovement Load (0.2ms)[0m  [1m[34mSELECT "ticket_movements".* FROM "ticket_movements"[0m
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/tickets" for 148.213.162.67 at 2017-10-20 12:09:26 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for Api::V1::TicketsController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'

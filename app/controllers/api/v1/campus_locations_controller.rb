@@ -7,7 +7,7 @@ class Api::V1::CampusLocationsController < ApplicationController
 	end
 
 	def show
-		@campus_location = CampusLocation.find(params[:id])
+		get_campus_location
 		render json: { campus_location: @campus_location }, status: 200
 	end
 
@@ -21,12 +21,12 @@ class Api::V1::CampusLocationsController < ApplicationController
 	end
 
 	def edit
-		@campus_location = CampusLocation.find(params[:id])
+		get_campus_location
 		render json: { campus_location: @campus_location }, status: 200
 	end
 
 	def update
-		@campus_location = CampusLocation.find(params[:id])
+		get_campus_location
 		if @campus_location.update(campus_location_params)
 			render json: { campus_location: @campus_location }, status: 200
 		else
@@ -46,6 +46,10 @@ class Api::V1::CampusLocationsController < ApplicationController
 	private
 	def campus_location_params
 		params.require(:campus_location).permit(:name)
+	end
+
+	def get_campus_location
+		@campus_location ||= CampusLocation.find_by(id: params[:id])
 	end
 
 	def render_record_not_found
