@@ -39,7 +39,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.1]
       t.string :mother_last_name
       t.string :email
       t.references :dependence, foreign_key: true
-      t.references :role, foreign_key: true
+      t.references :user_roles, foreign_key: true
 
       ## Tokens
       t.text :tokens
