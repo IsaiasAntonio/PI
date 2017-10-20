@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171016233143) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "campus_locations", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171016233143) do
 
   create_table "dependences", force: :cascade do |t|
     t.string "name"
-    t.integer "campus_location_id"
+    t.bigint "campus_location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["campus_location_id"], name: "index_dependences_on_campus_location_id"
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 20171016233143) do
 
   create_table "ticket_movements", force: :cascade do |t|
     t.text "description"
-    t.integer "movement_tag_id"
-    t.integer "ticket_id"
+    t.bigint "movement_tag_id"
+    t.bigint "ticket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movement_tag_id"], name: "index_ticket_movements_on_movement_tag_id"
@@ -50,9 +53,9 @@ ActiveRecord::Schema.define(version: 20171016233143) do
 
   create_table "tickets", force: :cascade do |t|
     t.text "description"
-    t.integer "ticket_state_id"
+    t.bigint "ticket_state_id"
     t.datetime "end_date"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ticket_state_id"], name: "index_tickets_on_ticket_state_id"
@@ -85,8 +88,8 @@ ActiveRecord::Schema.define(version: 20171016233143) do
     t.string "father_last_name"
     t.string "mother_last_name"
     t.string "email"
-    t.integer "dependence_id"
-    t.integer "user_role_id"
+    t.bigint "dependence_id"
+    t.bigint "user_roles_id"
     t.text "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -95,7 +98,14 @@ ActiveRecord::Schema.define(version: 20171016233143) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
-    t.index ["user_role_id"], name: "index_users_on_user_role_id"
+    t.index ["user_roles_id"], name: "index_users_on_user_roles_id"
   end
 
+  add_foreign_key "dependences", "campus_locations"
+  add_foreign_key "ticket_movements", "movement_tags"
+  add_foreign_key "ticket_movements", "tickets"
+  add_foreign_key "tickets", "ticket_states"
+  add_foreign_key "tickets", "users"
+  add_foreign_key "users", "dependences"
+  add_foreign_key "users", "user_roles", column: "user_roles_id"
 end
