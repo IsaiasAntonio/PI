@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20171016233143) do
     t.string "mother_last_name"
     t.string "email"
     t.bigint "dependence_id"
-    t.bigint "user_roles_id"
+    t.bigint "user_role_id"
     t.text "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20171016233143) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
-    t.index ["user_roles_id"], name: "index_users_on_user_roles_id"
+    t.index ["user_role_id"], name: "index_users_on_user_role_id"
   end
 
   add_foreign_key "dependences", "campus_locations"
@@ -107,5 +107,5 @@ ActiveRecord::Schema.define(version: 20171016233143) do
   add_foreign_key "tickets", "ticket_states"
   add_foreign_key "tickets", "users"
   add_foreign_key "users", "dependences"
-  add_foreign_key "users", "user_roles", column: "user_roles_id"
+  add_foreign_key "users", "user_roles"
 end
