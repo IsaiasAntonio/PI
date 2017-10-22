@@ -14,7 +14,7 @@ class Api::V1::TicketStatesController < ApplicationController
 	def create
 		@ticket_state = TicketState.new(ticket_state_params)
 		if @ticket_state.save
-			render json: { ticket_state: @ticket_state }, status: 200
+			render json: { ticket_state: @ticket_state }, status: 201
 		else
 			render json: { error: "El estado del ticket no se ha podido generar" }, status:422
 		end
@@ -28,7 +28,7 @@ class Api::V1::TicketStatesController < ApplicationController
 	def update
 		get_ticket_state
 		if @ticket_state.update(ticket_state_params)
-			render json: { ticket_state: @ticket_state }, status: 200
+			render json: { ticket_state: @ticket_state }, status: 202
 		else
 			render json: { error: "El estado del ticket no pudo ser actualizado" }, status: 422
 		end
@@ -37,7 +37,7 @@ class Api::V1::TicketStatesController < ApplicationController
 	def destroy
 		get_ticket_state
 		if @ticket_state.destroy
-			render json: { status: "Borrado" }, status: 200
+			render json: { status: "Borrado" }, status: 202
 		else
 			render json: { error: "No se pudo borrar el estado del ticket" }, status: 422
 		end

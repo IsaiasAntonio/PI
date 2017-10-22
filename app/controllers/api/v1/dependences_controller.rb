@@ -14,7 +14,7 @@ class Api::V1::DependencesController < ApplicationController
 	def create
 		@dependence = Dependence.new(dependence_params)
 		if @dependence.save
-			render json: { dependence: @dependence }, status: 200
+			render json: { dependence: @dependence }, status: 201
 		else
 			render json: { error: "La dependencia no se ha podido generar" }, status:422
 		end
@@ -28,7 +28,7 @@ class Api::V1::DependencesController < ApplicationController
 	def update
 		get_dependence
 		if @dependence.update(dependence_params)
-			render json: { dependence: @dependence }, status: 200
+			render json: { dependence: @dependence }, status: 202
 		else
 			render json: { error: "La dependencia no pudo ser actualizada" }, status: 422
 		end
@@ -37,7 +37,7 @@ class Api::V1::DependencesController < ApplicationController
 	def destroy
 		get_dependence
 		if @dependence.destroy
-			render json: { status: "Borrado" }, status: 200
+			render json: { status: "Borrado" }, status: 202
 		else
 			render json: { error: "No se pudo borrar la dependencia" }, status: 422
 		end

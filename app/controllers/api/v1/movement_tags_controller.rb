@@ -14,7 +14,7 @@ class Api::V1::MovementTagsController < ApplicationController
 	def create
 		@movement_tag = MovementTag.new(movement_tag_params)
 		if @movement_tag.save
-			render json: { movement_tag: @movement_tag }, status: 200
+			render json: { movement_tag: @movement_tag }, status: 201
 		else
 			render json: { error: "El tag no se ha podido generar" }, status:422
 		end
@@ -28,7 +28,7 @@ class Api::V1::MovementTagsController < ApplicationController
 	def update
 		get_movement_tag
 		if @movement_tag.update(movement_tag_params)
-			render json: { movement_tag: @movement_tag }, status: 200
+			render json: { movement_tag: @movement_tag }, status: 202
 		else
 			render json: { error: "El tag no pudo ser actualizada" }, status: 422
 		end
@@ -37,7 +37,7 @@ class Api::V1::MovementTagsController < ApplicationController
 	def destroy
 		get_movement_tag
 		if @movement_tag.destroy
-			render json: { status: "Borrado" }, status: 200
+			render json: { status: "Borrado" }, status: 202
 		else
 			render json: { error: "No se pudo borrar el tag" }, status: 422
 		end

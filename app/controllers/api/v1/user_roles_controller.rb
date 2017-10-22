@@ -14,7 +14,7 @@ class Api::V1::UserRolesController < ApplicationController
 	def create
 		@user_role = UserRole.new(user_role_params)
 		if @user_role.save
-			render json: { user_role: @user_role }, status: 200
+			render json: { user_role: @user_role }, status: 201
 		else
 			render json: { error: "El rol de usuario no se ha podido generar" }, status:422
 		end
@@ -28,7 +28,7 @@ class Api::V1::UserRolesController < ApplicationController
 	def update
 		get_user_role
 		if @user_role.update(user_role_params)
-			render json: { user_role: @user_role }, status: 200
+			render json: { user_role: @user_role }, status: 202
 		else
 			render json: { error: "El rol de usuario no pudo ser actualizado" }, status: 422
 		end
@@ -37,7 +37,7 @@ class Api::V1::UserRolesController < ApplicationController
 	def destroy
 		get_user_role
 		if @user_role.destroy
-			render json: { status: "Borrado" }, status: 200
+			render json: { status: "Borrado" }, status: 202
 		else
 			render json: { error: "No se pudo borrar el rol de usuario" }, status: 422
 		end
