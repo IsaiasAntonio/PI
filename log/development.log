@@ -9910,3 +9910,10 @@ FOREIGN KEY ("ticket_id")
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "movement_tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cancelled"], ["created_at", "2017-10-20 20:49:13.027252"], ["updated_at", "2017-10-20 20:49:13.027252"]]
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/campus_locations" for 127.0.0.1 at 2017-10-22 01:43:11 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CampusLocationsController#index as */*
+  [1m[36mCampusLocation Load (1.4ms)[0m  [1m[34mSELECT "campus_locations".* FROM "campus_locations"[0m
+Completed 200 OK in 16ms (Views: 6.0ms | ActiveRecord: 6.1ms)
+
+
