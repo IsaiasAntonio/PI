@@ -9,6 +9,15 @@ class Api::V1::DependencesController < ApplicationController
 		render json: { dependence: @dependence }, status: 200
 	end
 
+	def create
+		@dependence = Dependence.new(dependence_params)
+		if @dependence.save
+			render json: { dependence: @dependence }, status: 200
+		else
+			render json: { error: "La dependencia no se ha podido generar" }, status:422
+		end
+	end
+
 	def edit
 		get_dependence
 		render json: { dependence: @dependence }, status: 200
