@@ -4,6 +4,16 @@ class Api::V1::DependencesController < ApplicationController
 		render json: { dependences: @dependences }, status: 200
 	end
 
+	def show
+		get_dependence
+		render json: { dependence: @dependence }, status: 200
+	end
+
+	def edit
+		get_dependence
+		render json: { dependence: @dependence }, status: 200
+	end
+
 	private
 	def dependence_params
 		params.require(:dependence).permit(:name, :campus_location_id)
