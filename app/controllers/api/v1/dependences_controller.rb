@@ -1,4 +1,6 @@
 class Api::V1::DependencesController < ApplicationController
+	rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
+
 	def index
 		@dependences = Dependence.all
 		render json: { dependences: @dependences }, status: 200
@@ -29,7 +31,7 @@ class Api::V1::DependencesController < ApplicationController
 	end
 
 	def get_dependence
-		@dependence ||= Dependence.find_by(id: params[:id])
+		@dependence ||= Dependence.find(params[:id])
 	end
 
 	def render_record_not_found

@@ -49,7 +49,7 @@ class Api::V1::CampusLocationsController < ApplicationController
 	end
 
 	def get_campus_location
-		@campus_location ||= CampusLocation.find_by(id: params[:id])
+		@campus_location ||= CampusLocation.find(params[:id])
 	end
 
 	def render_record_not_found
