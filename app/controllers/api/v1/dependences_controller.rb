@@ -25,6 +25,15 @@ class Api::V1::DependencesController < ApplicationController
 		render json: { dependence: @dependence }, status: 200
 	end
 
+	def update
+		get_dependence
+		if @dependence.update(dependence_params)
+			render json: { dependence: @dependence }, status: 200
+		else
+			render json: { error: "La dependencia no pudo ser actualizada" }, status: 422
+		end
+	end
+
 	private
 	def dependence_params
 		params.require(:dependence).permit(:name, :campus_location_id)
