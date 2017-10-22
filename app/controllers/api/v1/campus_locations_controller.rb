@@ -35,9 +35,9 @@ class Api::V1::CampusLocationsController < ApplicationController
 	end
 
 	def destroy
-		@campus_location = CampusLocation.find(params[:id])
+		get_campus_location
 		if @campus_location.destroy
-			render json: { status: "Deleted" }, status: 200
+			render json: { status: "Borrado" }, status: 200
 		else
 			render json: { error: "No se pudo borrar la locación del campus" }, status: 422
 		end

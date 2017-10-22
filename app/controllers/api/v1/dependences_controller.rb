@@ -34,6 +34,15 @@ class Api::V1::DependencesController < ApplicationController
 		end
 	end
 
+	def destroy
+		get_dependence
+		if @dependence.destroy
+			render json: { status: "Borrado" }, status: 200
+		else
+			render json: { error: "No se pudo borrar la dependencia" }, status: 422
+		end
+	end
+
 	private
 	def dependence_params
 		params.require(:dependence).permit(:name, :campus_location_id)
