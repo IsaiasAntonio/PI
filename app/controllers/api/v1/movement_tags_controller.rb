@@ -1,5 +1,6 @@
 class Api::V1::MovementTagsController < ApplicationController
 	rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
+	before_action :authenticate_user!
 
 	def index
 		@movement_tags = MovementTag.all
