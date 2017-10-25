@@ -1,9 +1,8 @@
 class Api::V1::TicketMovementsController < ApplicationController
 	rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
-	before_action :authenticate_user!
 
 	def index
-		@ticket_movements = TicketMovement.all
+		@ticket_movements = TicketMovement.where(ticket_id: params[:ticket_id])
 		render json: { ticket_movements: @ticket_movements }, status: 200
 	end
 
