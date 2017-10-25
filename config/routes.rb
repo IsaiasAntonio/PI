@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :ticket_movements
       resources :ticket_states
       resources :user_roles
+      resources :admin
   	end
   end
 end
