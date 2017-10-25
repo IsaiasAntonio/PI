@@ -50,7 +50,7 @@ class Api::V1::TicketsController < ApplicationController
 	end
 
 	def update_ticket_params
-		params.require(:ticket).permit(:description, :ticket_state_id, :end_date)
+		params.require(:ticket).permit(:description, :ticket_state_id, :user_id, :end_date)
 	end
 
 	def get_ticket
