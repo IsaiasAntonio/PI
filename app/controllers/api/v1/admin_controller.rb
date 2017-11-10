@@ -43,7 +43,7 @@ class Api::V1::AdminController < ApplicationController
 	end
 
 	def render_unauthorized_user
-		render json: { error: "No está autorizado pa hacer esto compa" }, status: 401
+		render json: { error: "No está autorizado para accesar." }, status: 401
 	end
 
 	def render_record_not_found
