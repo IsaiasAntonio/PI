@@ -46,11 +46,11 @@ class Api::V1::TicketsController < ApplicationController
 
 	private
 	def create_ticket_params
-		params.require(:ticket).permit(:description, :user_id, :ticket_state_id)
+		params.require(:ticket).permit(:description, :user_id, :ticket_state_id, :responsable_id)
 	end
 
 	def update_ticket_params
-		params.require(:ticket).permit(:description, :ticket_state_id, :user_id, :end_date)
+		params.require(:ticket).permit(:description, :ticket_state_id, :user_id, :end_date, :responsable_id)
 	end
 
 	def get_ticket
