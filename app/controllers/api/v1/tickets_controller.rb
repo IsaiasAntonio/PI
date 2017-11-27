@@ -6,7 +6,11 @@ class Api::V1::TicketsController < ApplicationController
 
 	# Regresa todos los tickets del usuario
 	def index
-		@tickets = Ticket.all
+		if current_user.user_role == 1
+			@tickets = Ticket.all
+		else
+			@tickets = Ticket.where(user_id: current_user.id)
+		end
 		render json: { tickets: @tickets }, status: 200
 	end
 
