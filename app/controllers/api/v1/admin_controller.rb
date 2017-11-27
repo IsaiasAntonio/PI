@@ -5,6 +5,8 @@ class Api::V1::AdminController < ApplicationController
 	# Antes de que se ejecute cualquier método se pide que el usuario esté loggeado.
 	before_action :authenticate_user!
 
+	# El id por defecto de los admins será el 1, ese es la base para las validaciones.
+
 	# Regresa todos los usuarios si es que el usuario es administrador.
 	def index
 		if current_user.user_role_id == 1

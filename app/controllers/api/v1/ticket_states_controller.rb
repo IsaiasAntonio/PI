@@ -1,6 +1,6 @@
 class Api::V1::TicketStatesController < ApplicationController
 	rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
-	before_action :authenticate_user!
+	before_action :authenticate_user!, :except => [:index, :show]
 
 	def index
 		@ticket_states = TicketState.all

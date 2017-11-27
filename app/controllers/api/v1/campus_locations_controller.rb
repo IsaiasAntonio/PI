@@ -1,6 +1,8 @@
 class Api::V1::CampusLocationsController < ApplicationController
+	# Si ActiveRecord regresa un error porque no encontró un registro en específico va a mandar llamar la función de render_record_not_found
 	rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
-	before_action :authenticate_user!
+	# Antes de que se ejecute cualquier método se pide que el usuario esté loggeado.
+	before_action :authenticate_user!, :except => [:index, :show]
 
 	def index
 		@campus_locations = CampusLocation.all
