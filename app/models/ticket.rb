@@ -9,6 +9,6 @@ class Ticket < ApplicationRecord
 
   # Modificación a una función de sistema para añadir más valores a una respuesta.
 	def as_json(options={})
-	  super(:include => [:user, :responsable])
+	  super(:include => [:user, :responsable, :ticket_state])
 	end
 end
