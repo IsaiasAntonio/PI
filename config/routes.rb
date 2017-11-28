@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :user_roles
       resources :admin
       resources :user
+      resources :responsables
   	end
   end
 end

@@ -9,7 +9,7 @@ campus_locations = CampusLocation.create(
 	[
 		{ name: "Colima" },
 		{ name: "Manzanillo" },
-		{ name: "Coquimatlán"},
+		{ name: "Coquimatlán" },
 		{ name: "Villa de Álvarez" },
 		{ name: "Tecomán" },
 		{ name: "Cuauhtémoc" }
@@ -19,35 +19,23 @@ campus_locations = CampusLocation.create(
 dependences = Dependence.create(
 	[
 		{
-			name: "Facultad de Telemática",
+			name: "Biblioteca de Humanidades",
 			campus_location_id: 1
 		},
 		{
-			name: "Facultad de Medicina",
+			name: "Bibioteca de Ciencias",
 			campus_location_id: 1
 		},
 		{
-			name: "Facultad de Psicología",
-			campus_location_id: 1
-		},
-		{
-			name: "Facultad de gastronomía",
+			name: "Bibioteca de Negocios",
 			campus_location_id: 2
 		},
 		{
-			name: "FIME",
+			name: "Biblioteca de ciencias exactas",
 			campus_location_id: 3
 		},
 		{
-			name: "Facultad de Economía",
-			campus_location_id: 4
-		},
-		{
-			name: "Facultad de Veterinaria",
-			campus_location_id: 5
-		},
-		{
-			name: "Facultad de Turismo",
+			name: "Bibioteca de Lenguas",
 			campus_location_id: 4
 		}
 	]
@@ -62,9 +50,6 @@ user_roles = UserRole.create(
 			name: "Bibliotecario"
 		},
 		{
-			name: "Responsable"
-		},
-		{
 			name: "Estudiante"
 		}
 	]
@@ -76,7 +61,7 @@ ticket_states = TicketState.create(
 			name: "Activo"
 		},
 		{
-			name: "Cancelado"
+			name: "Cerrado"
 		}
 	]
 )
@@ -87,7 +72,10 @@ movement_tags = MovementTag.create(
 			name: "Respuesta"
 		},
 		{
-			name: "Cancelado"
+			name: "Pregunta"
+		},
+		{
+			name: "Cierre"
 		}
 	]
 )
