@@ -6,7 +6,7 @@ class Api::V1::TicketsController < ApplicationController
 
 	# Regresa todos los tickets del usuario
 	def index
-		if current_user.user_role_id == 1
+		if current_user.user_role_id == 1 || current_user.user_role_id == 2
 			@tickets = Ticket.all
 		else
 			@tickets = Ticket.where(user_id: current_user.id)
