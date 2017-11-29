@@ -1,6 +1,6 @@
 class Api::V1::TicketMovementsController < ApplicationController
 	rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
-	before_action :authenticate_user!
+	before_action :authenticate_user!, :except => [:index, :show]
 
 	def index
 		@ticket_movements = TicketMovement.where(ticket_id: params[:ticket_id])
